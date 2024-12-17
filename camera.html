@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>Mirror</title>
+    </head>
+    <!--This is supposed to be an inspirational webpage for users to know that they are beautiful-->
+
+    <body class="mirror-body">
+        <div class="mirror-container">
+            <div class="mirror-frame">
+                <img src="https://customframingdesigns.com/image/cache/catalog/Frames/OV_19_AG-removebg-preview-800x800.png" class="frame-image" alt="Vintage Frame">
+                <div class="video-container">
+                    <video id="videoElement" autoplay playsinline></video>
+                </div>
+            </div>
+            <h2 class="caption">You Are So Beautiful!</h2>
+            <button class="start-button" onclick="startMirror()">Open Mirror</button>
+            <!--Adding a privacy note so that the user knows that the webpage is not
+        recording them or invading their privacy-->
+            <p class="privacy-note">
+                Note: This feature requires camera access. Your camera feed is not recorded or stored.
+            </p>
+        </div>
+
+        <!--Home Button being displayed at the top left corner of the webpage-->
+        <a href="#" class="home-button" onclick="goHome()">
+            <img src="https://logowik.com/content/uploads/images/stencil-black-flower1724280892.logowik.com.webp" alt="Logo" class="logo">
+        </a>
+
+        <script>
+            // Making the home button functionable and help the user redirect to the navigation bar html page
+            function goHome() {
+                // redirects to nav_bar.html
+                window.location.href = "nav_bar.html";
+            }
+            // Request access to user's camera using modern navigator.mediaDevices API
+            // The getUserMedia promise returns a stream if permission is granted
+            // audio: false ensures we're only requesting video access
+            const video = document.getElementById('videoElement'); // Captures the video element for camera feed
+            const startButton = document.querySelector('.start-button'); // Captures the button element for user interaction
+
+            // Turning on the camera to become a "mirror"
+            async function startMirror() {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: true,
+                        audio: false
+                    });
+
+                    // Once we have the stream, set it as the source for our video element
+                    video.srcObject = stream;
+
+                    // Update button appearance to indicate active state
+                    startButton.textContent = 'Mirror Active';
+                    startButton.style.background = '#f0f0f0';
+                } catch (err) {
+                    // Error handling for cases where:
+                    // 1. User denies camera permission
+                    // 2. No camera is available
+                    // 3. Other technical issues arise
+                    console.error('Error:', err);
+                    alert('Unable to access camera. Please make sure you have a camera connected and have granted permission to use it.');
+                    startButton.textContent = 'Try Again';
+                }
+            }
+
+            // Stop the video stream when the user leaves the page
+            window.onbeforeunload = function() {
+                if (video.srcObject) {
+                    // Get all tracks (video streams) and stop them
+                    video.srcObject.getTracks().forEach(track => track.stop());
+                }
+            };
+        </script>
+    </body>
+
+</html>

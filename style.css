@@ -1,0 +1,995 @@
+/* This is CSS code for both the body of nav_bar.html and homepage.html*/
+body {
+    background-color: #EE82EE;
+    /* Set purple background for consistent them */
+    justify-content: center;
+    /* Horizontally center all page content */
+    height: 100vh;
+    /* Make body take full viewport height */
+    margin: 0;
+    /* Remove default browser margins */
+    text-align: center;
+    overflow: scroll;
+    /* Enable scrolling  for content overflow */
+}
+
+/* Main container for header elements - ensures consistent header layout on Girlhood. homepage*/
+.header-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Phases slideshow container */
+.slideshow-container {
+    /* Positioning context */
+    position: relative;
+    max-height: 100%;
+    /* Prevent container from exceeding viewport height */
+    width: 90%;
+    /* Use 90% of available width for better readability */
+    margin: 20px auto;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px auto;
+    /* Semi-transparent white background for better contrast */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    /* Box shadow for depth - 20 px vertical offset, 15px blur */
+    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box 0 20px 15px;
+    /* Makes sure that the padding and border of an element are included in the element's total width and height */
+}
+
+/* Individual phase images styling */
+.phases-img {
+    max-width: 300px;
+    /* Limit image width for consistency */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 10px;
+    /* Rounded corners on images */
+    display: block;
+    position: relative;
+}
+
+/* Individual slide styling - handles visibility and layout */
+.slide {
+    display: none;
+    /* Hides slides by default, shwon when active */
+    padding: 40px 20px;
+    text-align: center;
+    /* Center align comment */
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    /* Center align items horizontally */
+    justify-content: flex-start;
+    gap: 20px;
+    /* Adds consistent spacing between slide elements */
+    overflow: visible;
+    /* Allow content to exceed slide boundaries if needed */
+}
+
+/* When the slides are active and currently displayed */
+.active-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navigation controls for phases webpage title */
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    background: white;
+    color: #9932CC;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-weight: bold;
+    font-family: "Salina", salina;
+}
+
+.nav-button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* Progress dots for slideshow on Phases webpage*/
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    /* Makes the element be inline with otyher elements but still have dimensions and margins like a block element */
+    transition: background-color 0.3s;
+}
+
+/* Indicating when a slide is active via dot */
+.dot.active {
+    background-color: white;
+}
+
+/* Formatting The Four Phases title */
+.phases-title-h {
+    text-align: center;
+    color: #9932CC;
+    font-family: "Salina", salina;
+    font-size: 100px;
+    position: relative;
+    margin-bottom: 10px;
+    /* Creating space between the bottom of the page and the text */
+}
+
+/* Formatting the text in each of the phases description */
+.phase-text {
+    text-align: center;
+    line-height: 1.6;
+    margin: 10px 0;
+    overflow-y: auto;
+    /* Scroll if text overflows */
+    padding: 20px;
+    font-family: "Salina", salina;
+    font-size: 24px;
+    color: white;
+    width: 80%;
+    position: relative;
+    transform: none;
+}
+
+/* Responsive design for the Phases Slide */
+@media (max-width: 768px) {
+
+    /* Adjustments for smaller screens */
+    .slideshow-container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .phase-text {
+        font-size: 0.9em;
+        /* Smaller text on mobile */
+    }
+
+    .phases-img {
+        max-width: 50%;
+        /* Half width images on mobile */
+    }
+
+    .phases-title-h {
+        font-size: 60px;
+        /* Smaller title on mobile */
+    }
+}
+
+/* Each phase has a unique color scheme for visual differentiation */
+/* Giving the Follicular Phase title a border and green color */
+.highlight1 {
+    border-left: 5px solid green;
+    padding-left: 10px;
+    background-color: #7dd87d;
+    /* Light green for Follicular phase */
+    font-size: 33px;
+}
+
+/* Giving the Ovulation Phase title a border and a yellow color */
+.highlight2 {
+    border-left: 5px solid yellow;
+    padding-left: 10px;
+    background-color: #f5dd7b;
+    /* Light yellow for Ovulation phase */
+    font-size: 33px;
+}
+
+/* Giving the Luteal Phase title a border and a blue color */
+.highlight3 {
+    border-left: 5px solid blue;
+    padding-left: 10px;
+    background-color: #93deff;
+    /* Light blue for Luteal phase */
+    font-size: 33px;
+}
+
+/* Giving the Menstrual Phase title a border and a red color */
+.highlight4 {
+    border-left: 5px solid red;
+    padding-left: 10px;
+    background-color: #f64b3c;
+    /* Light red for Menstrual Phase */
+    font-size: 33px;
+    color: white;
+}
+
+/* The Phases body formatting */
+.phases-body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #EE82EE;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+/* Styling the "Girlhood." title */
+.webpage-title {
+    font-family: "Salina", salina;
+    font-size: 150px;
+    color: #9932CC;
+    top: 200px;
+    left: 400px;
+    position: fixed;
+}
+
+/* Styling the period on my homepage */
+.period {
+    font-family: "Salina", salina;
+    font-size: 150px;
+    color: #9932CC;
+    position: fixed;
+    top: 302px;
+    right: 420px;
+    background-color: transparent;
+    /* Fully transparent background */
+    border: none;
+    /* No border */
+    padding: 0px;
+    /* Padding for clickable area */
+    cursor: pointer;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    /* Making the period glow */
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Animation keyframes for glowing effect - make the period dot glow! */
+@-webkit-keyframes glow {
+
+    /* Start state of glow animation */
+    from {
+        /* Multiple text shadows create the glow effect */
+        text-shadow: 0 0 500px #fff, 0 0 50px #fff, 0 0 60px #C71585, 0 0 70px #C71585, 0 0 80px #C71585, 0 0 90px #C71585, 0 0 300px #C71585;
+    }
+
+    /* End state of glow animation */
+    to {
+        text-shadow: 0 0 500px #fff, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6, 0 0 90px #ff4da6, 0 0 300px #ff4da6;
+    }
+}
+
+/* Centering my text in my HTML webpages */
+.centered-comment {
+    text-align: center;
+    position: fixed;
+    top: 450px;
+    left: 900px;
+    font-family: "Salina", salina;
+    font-size: 30px;
+    color: #9932CC;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    /* Making the period glow */
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Navigation */
+.navbar-custom {
+    background-color: #EE82EE;
+    align-items: center;
+    position: absolute;
+    top: 250px;
+}
+
+/* Formatting the buttons on the navigation bar html */
+button.button {
+    margin: 10px;
+    /* Add space between buttons */
+    padding: 10px 20px;
+    /* button size */
+    font-size: 30px;
+    /* button text size */
+    background-color: #9b77da;
+    /* Button background color */
+    font-family: "Salina", salina;
+    color: white;
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    /* Glow Code taken from Bootstrap */
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    /* Making the period glow */
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    /*Giving the button the ability to hover */
+    animation: glow 1s ease-in-out infinite alternate;
+    border-radius: 12px;
+    /*Defining the border */
+    border-style: double;
+    border-color: white;
+    width: 500px;
+    height: 70px;
+}
+
+button.button:hover {
+    background-color: #7a28b1;
+    /* Change color when hovering over button */
+}
+
+h1 {
+    color: #9932CC;
+    font-family: "Salina", salina;
+    font-size: 45px;
+}
+
+p {
+    color: #9932CC;
+    font-family: "Salina", salina;
+    font-size: 39px;
+    text-align: center;
+    position: relative;
+}
+
+
+/* Formatting the body of my products webpage */
+.product-container {
+    max-width: 2000px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+/* Formatting the body of the relief webpage */
+.relief-container1 {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+/* Containing the contents of the image and the text on places like the relief and the products pages */
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+/* This is for the home button that displays in the top left corner of every webpage */
+.home-button {
+    position: fixed;
+    top: 30px;
+    left: -320px;
+    /* These dimensions make the button closer to the top left side of the homepage */
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+/* Resizing the logo cover size */
+.logo {
+    max-width: 10%;
+}
+
+/* This is for the heat pad image I use on my relief page */
+.relief-img1 {
+    position: absolute;
+    width: 46%;
+    top: 500px;
+    right: -130px;
+}
+
+/* This is for the acupressure image I use on my relief page */
+.relief-img2 {
+    position: absolute;
+    width: 50%;
+    top: 1070px;
+    left: -160px;
+}
+
+/* This is for the exercise image I use on my relief page */
+.relief-img3 {
+    position: absolute;
+    width: 55%;
+    top: 1345px;
+    right: -180px;
+    padding-bottom: 30px;
+    /* Provides space at the bottom of the image */
+}
+
+/* Buttons for each of the organizations displayed on the resources page */
+.logo-button {
+    display: flex;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    /* Removes any text decorations from an element such as underlines, overlines, or strikethroughs */
+}
+
+/* Making those buttons hover */
+.logo-button img:hover {
+    transform: scale(1.1);
+}
+
+/* This is to format the BanaPads logo cover */
+.logo1 {
+    padding: 20px;
+    position: absolute;
+    top: 300px;
+    left: 90px;
+    margin: 10px;
+    width: 170px;
+    height: auto;
+    transition: transform 0.3s;
+    /* Smooth transition */
+}
+
+/* This is to format the Planned Parenthood logo cover */
+.logo2 {
+    padding: 20px;
+    margin: 10px;
+    position: absolute;
+    width: 170px;
+    top: 550px;
+    right: 170px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* This is to format the SafePad logo on the resources page cover */
+.logo3 {
+    padding: 20px;
+    position: absolute;
+    margin: 10px;
+    width: 203px;
+    top: 550px;
+    left: 200px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* This is to format the LGBT Foundation logo cover */
+.logo4 {
+    padding: 20px;
+    position: absolute;
+    margin: 10px;
+    width: 170px;
+    top: 550px;
+    left: 500px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* This is to format the Clue App logo cover */
+.logo5 {
+    padding: 20px;
+    margin: 10px;
+    position: absolute;
+    width: 170px;
+    top: 300px;
+    left: 360px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* This is to format the Flo Health logo cover */
+.logo6 {
+    padding: 20px;
+    margin: 10px;
+    position: absolute;
+    width: 170px;
+    top: 300px;
+    right: 575px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* This is to format The Pad Project logo cover */
+.logo7 {
+    padding: 20px;
+    margin: 10px;
+    position: absolute;
+    width: 170px;
+    top: 550px;
+    right: 430px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* This is to format the Healthy Women logo cover */
+.logo8 {
+    padding: 20px;
+    margin: 10px;
+    position: absolute;
+    width: 170px;
+    top: 300px;
+    right: 300px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* This is to format the Saathi Pads logo cover */
+.logo9 {
+    padding: 20px;
+    margin: 10px;
+    position: absolute;
+    width: 170px;
+    top: 300px;
+    right: 50px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* Formatting the resources webpage title */
+.resources-title {
+    position: absolute;
+    left: 565px;
+    top: 60px;
+    font-family: "Salina", salina;
+    font-size: 80px;
+    color: #9932CC;
+}
+
+/* This is to format the subtitle on the resources page */
+.resources-paragraph {
+    position: absolute;
+    left: 420px;
+    top: 200px;
+    font-family: "Salina", salina;
+    color: #9932CC;
+    font-size: 30px;
+}
+
+/* This is for the text that I write about for Heat Therapy */
+.relief-text1 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #9932CC;
+    color: white;
+    font-family: "Salina", salina;
+    top: 680px;
+    left: 230px;
+    font-size: 25px;
+    line-height: 1.8;
+}
+
+/* This is for the Acupressure paragraph I write on the relief page */
+.relief-text2 {
+    position: relative;
+    background-color: #9932CC;
+    color: white;
+    font-family: "Salina", salina;
+    top: 1110px;
+    left: 370px;
+    width: 800px;
+    font-size: 25px;
+    line-height: 1.8;
+}
+
+/* This is for the Exercise pargaraph I write on the relief page */
+.relief-text3 {
+    position: absolute;
+    background-color: #9932CC;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Salina", salina;
+    top: 1570px;
+    left: 230px;
+    font-size: 25px;
+    line-height: 1.8;
+}
+
+.relief-title {
+    position: absolute;
+    left: 280px;
+    top: 20px;
+    font-family: "Salina", salina;
+    font-size: 80px;
+    color: #9932CC;
+}
+
+/* The quote and subheader for the relief webpage */
+.relief-paragraph {
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    font-family: "Salina", salina;
+    color: #9932CC;
+    font-size: 30px;
+}
+
+.relief-paragraph2 {
+    position: absolute;
+    left: 60px;
+    top: 270px;
+    font-family: "Salina", salina;
+    text-align: center;
+    color: #E6E6FA;
+    font-size: 30px;
+}
+
+h2 {
+    position: absolute;
+    left: 70px;
+    top: 430px;
+    font-family: "Salina", salina;
+    color: #9932CC;
+    font-size: 40px;
+}
+
+.products-title {
+    position: absolute;
+    left: 400px;
+    top: 60px;
+    font-family: "Salina", salina;
+    font-size: 80px;
+    color: #9932CC;
+}
+
+/* Each of these are subheaders including the quote on the products webpage */
+.products-paragraph {
+    position: absolute;
+    left: 310px;
+    top: 200px;
+    font-family: "Salina", salina;
+    color: #9932CC;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.products-paragraph2 {
+    position: absolute;
+    left: 60px;
+    top: 270px;
+    font-family: "Salina", salina;
+    text-align: center;
+    color: #E6E6FA;
+    font-size: 30px;
+}
+
+hr {
+    border: 2px solid #9932CC;
+    width: 90%;
+    margin: 20px auto;
+    position: absolute;
+    top: 400px;
+    left: 75px;
+}
+
+/* This is to format the paragraph on the products page that describes to the reader
+why they should go natural and organic */
+.p2 {
+    position: absolute;
+    text-align: left;
+    left: 75px;
+    top: 500px;
+    right: 49px;
+    font-family: "Salina", salina;
+    background-color: #E0B0FF;
+    padding: 10px;
+    color: #9932CC;
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+/* The Pads Image */
+.products-img1 {
+    position: absolute;
+    width: 41%;
+    top: 1200px;
+    right: 60px;
+}
+
+/* This is to format the paragraph that describes what pads are on the products page */
+.products-text1 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #9932CC;
+    color: white;
+    font-family: "Salina", salina;
+    top: 1350px;
+    left: 400px;
+    width: 50%;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+/* Tampons image */
+.products-img2 {
+    position: absolute;
+    width: 41%;
+    top: 1700px;
+    right: 60px;
+}
+
+/* Tampons description */
+.products-text2 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #E0B0FF;
+    color: #9932CC;
+    font-family: "Salina", salina;
+    top: 1870px;
+    left: 400px;
+    width: 50%;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+/* Menstrual Cup image */
+.products-img3 {
+    position: absolute;
+    width: 41%;
+    top: 2250px;
+    right: 60px;
+}
+
+/* Menstrual Cup description */
+.products-text3 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #9932CC;
+    color: white;
+    font-family: "Salina", salina;
+    top: 2390px;
+    left: 400px;
+    width: 50%;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+/* Menstrual Disc Image */
+.products-img4 {
+    position: absolute;
+    width: 41%;
+    top: 2730px;
+    right: 60px;
+}
+
+/* Menstrual Disc description */
+.products-text4 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #E0B0FF;
+    color: #9932CC;
+    font-family: "Salina", salina;
+    top: 2870px;
+    width: 50%;
+    left: 400px;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+/* Period Underwear */
+.products-img5 {
+    position: absolute;
+    width: 41%;
+    top: 3220px;
+    right: 40px;
+    padding: 20px;
+}
+
+/* Period Underwear description */
+.products-text5 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #9932CC;
+    color: white;
+    font-family: "Salina", salina;
+    top: 3405px;
+    width: 50%;
+    left: 400px;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.relief-hr {
+    border: 2px solid #9932CC;
+    width: 130%;
+    margin: 20px auto;
+    position: absolute;
+    top: 250px;
+    left: -140px;
+}
+
+/* These are horizontal line breaks in between each paragraph on the relief page */
+.relief-hr1 {
+    border: 2px double #9932CC;
+    width: 130%;
+    margin: 20px auto;
+    position: absolute;
+    top: 420px;
+    left: -140px;
+}
+
+.relief-hr2 {
+    border: 2px double #9932CC;
+    width: 130%;
+    margin: 20px auto;
+    position: absolute;
+    top: 970px;
+    left: -140px;
+}
+
+.relief-hr3 {
+    border: 2px double #9932CC;
+    width: 130%;
+    margin: 20px auto;
+    position: absolute;
+    top: 1900px;
+    left: -140px;
+}
+
+/* Everything below is for the camera-html page */
+.mirror-body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #EE82EE;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+/* Contains all the elements on the camera.html page */
+.mirror-container {
+    text-align: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* This is formating the vintage mirror frame display for camera.html */
+.mirror-frame {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Vintage frame mirror image display */
+.frame-image {
+    width: 1000px;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Moves the element's top-left corner to the center point
+  then shifts the element back by half its width and height */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Contains all the elements of the computer's camera itself and its accessibility */
+.video-container {
+    width: 680px;
+    height: 880px;
+    position: relative;
+    overflow: hidden;
+    /* Clips any content that extends beyond these dimensions, preventing unwanted scrollbars */
+    margin: 0 auto;
+    /* Centers the container horizontally with automatic left/right margins */
+}
+
+/* Formating the video camera to ensure that it fits in the mirror frame */
+#videoElement {
+    width: 70%;
+    height: 60%;
+    transform: scaleX(-1);
+    /* Flip camera horizontally for mirror effect */
+    object-fit: cover;
+    /* Oval shape for mirror effect */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin-top: 170px;
+}
+
+/* You Are So Beautiful! Caption */
+.caption {
+    font-size: 2.5em;
+    color: white;
+    /* Changed to white */
+    margin: 20px 0;
+    font-weight: bold;
+    justify-content: center;
+    top: 85%;
+    left: 38%;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Button to activate the camera */
+.start-button {
+    background: white;
+    color: #EE82EE;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    /* Creates a smooth transition effect */
+    margin: 20px 0;
+}
+
+/* Making the button hover once the mouse goes over it */
+.start-button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.privacy-note {
+    color: white;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Making the You Are So Beautiful! comment glow */
+@keyframes glow {
+
+    /* Start glow animation */
+    from {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* End glow animation */
+    to {
+        text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    /* Adjusting for smaller screens */
+    .frame-image {
+        width: 100%;
+    }
+
+    .video-container {
+        width: 800px;
+        height: 500px;
+    }
+
+    .caption {
+        /* Adjusts the caption to be under the mirror image for when there is a smaller screen */
+        font-size: 2em;
+        top: 67%;
+        left: 30%;
+    }
+
+    #videoElement {
+        /* Adjusts the video itself to still fit wthin the frame as it gets smaller */
+        width: 70%;
+        height: 60%;
+        transform: scaleX(-1);
+        object-fit: cover;
+        /* Maintaining oval shape */
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        margin-top: 100px;
+    }
+}

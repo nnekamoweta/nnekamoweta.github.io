@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>Navigation Bar</title>
+    </head>
+
+    <body>
+        <!--Navigation section-->
+        <nav class="navbar-custom">
+            <h1>Select one of the buttons to learn more!</h1>
+            <div>
+                <!--Each of the buttons displayed for the user to navigate the different webpages-->
+                <button id='Phases' class="button" type="button">Phases</button>
+                <button id='Products' class="button" type="button">Products</button>
+                <button id='Relief' class="button" type="button">Relief</button>
+                <button id='Resources' class="button" type="button">Resources</button>
+                <button id='Mirror' class="button" type="button">Mirror</button>
+            </div>
+        </nav>
+        <!--Displaying the flower image logo of the home button for the user to click on-->
+        <a href="#" class="home-button" onclick="goHome()">
+            <img src="https://logowik.com/content/uploads/images/stencil-black-flower1724280892.logowik.com.webp" alt="Logo" class="logo">
+        </a>
+
+        <script>
+            // Home Button displayed at the top left corner of the webpage
+            function goHome() {
+                window.location.href = "homepage.html";
+            }
+
+            // Making the buttons clickable
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("Phases").addEventListener("click", function() {
+                    // redirecting to phases.html
+                    window.location.href = "phases.html";
+                });
+
+                document.getElementById("Products").addEventListener("click", function() {
+                    // redirecting to products.html
+                    window.location.href = "products.html";
+                });
+
+                document.getElementById("Resources").addEventListener("click", function() {
+                    // redirecting to resources.html
+                    window.location.href = "resources.html";
+                });
+
+                document.getElementById("Relief").addEventListener("click", function() {
+                    // redirecting to relief.html
+                    window.location.href = "relief.html";
+                });
+
+                document.getElementById("Mirror").addEventListener("click", function() {
+                    // redirecting to camera.html
+                    window.location.href = "camera.html";
+                });
+            });
+        </script>
+    </body>
+
+</html>
